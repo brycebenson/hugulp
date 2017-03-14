@@ -4,7 +4,7 @@ var changed = require('gulp-changed');
 
 gulp.task('images', function () {
   return gulp.src('assets/img/*.*')
-    .pipe(changed('staging/assets/img'))
+    .pipe(changed('staging/img'))
     .pipe(imagemin())
-    .pipe(gulp.dest('staging/assets/img'));
+    .pipe(gulp.dest('staging/img'));
 });
