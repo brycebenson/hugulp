@@ -3,7 +3,7 @@ var replace = require("gulp-rev-replace");
 var size = require('gulp-size');
 
 gulp.task('reference:content', ['hugo:draft'], function() {
-    var manifest = gulp.src('public/rev-manifest.json');
+    var manifest = gulp.src('public/assets/rev-manifest.json');
 
     return gulp.src(['public/**/*.html', 'public/**/*.xml', 'public/**/*.css'])
         .pipe(replace({manifest: manifest}))
@@ -12,7 +12,7 @@ gulp.task('reference:content', ['hugo:draft'], function() {
 });
 
 gulp.task('reference:all', ['hugo:all'], function() {
-    var manifest = gulp.src('public/rev-manifest.json');
+    var manifest = gulp.src('public/assets/rev-manifest.json');
 
     return gulp.src(['public/**/*.html', 'public/**/*.xml', 'public/**/*.css'])
         .pipe(replace({manifest: manifest, replaceInExtensions: ['.html', '.xml', '.css']}))
@@ -21,7 +21,7 @@ gulp.task('reference:all', ['hugo:all'], function() {
 });
 
 gulp.task('reference:publish', ['hugo:live'], function() {
-    var manifest = gulp.src('public/rev-manifest.json');
+    var manifest = gulp.src('public/assets/rev-manifest.json');
 
     return gulp.src(['public/**/*.html', 'public/**/*.xml', 'public/**/*.css'])
         .pipe(replace({manifest: manifest, replaceInExtensions: ['.html', '.xml', '.css']}))
