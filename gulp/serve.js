@@ -7,7 +7,7 @@ gulp.task('serve', ['build:all'], function() {
         server: {
             baseDir: "./public/"
         },
-        open: false
+        open: true
     });
 
     // add browserSync.reload to the tasks array to make

@@ -8,5 +8,5 @@ gulp.task('styles', function() {
         .pipe(sass())
         .pipe(autoprefixer('last 2 version'))
         .pipe(cleancss({advanced:false}))
-        .pipe(gulp.dest('staging/css'));
+        .pipe(gulp.dest('staging/assets/css'));
 });

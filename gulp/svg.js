@@ -4,5 +4,5 @@ var gulp = require('gulp');
 gulp.task('svg', function () {
   return gulp.src('assets/svg/*.svg')
 //    .pipe(svgmin())
-    .pipe(gulp.dest('staging/img'));
+    .pipe(gulp.dest('staging/assets/img'));
 });
