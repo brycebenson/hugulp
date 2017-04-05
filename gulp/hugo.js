@@ -23,10 +23,10 @@ function hugo(drafts) {
 	// console.log('conf %s', conf)
 
     var cmd = 'hugo --config=' + conf + ' -s ' + src + ' -d ' + dst;
-    if (drafts === true) {
-        cmd += ' --buildDrafts=true --verbose=true --baseUrl="http://localhost:3000/" ';
-    } else if (drafts === 'live') {
+    if (drafts === false) {
         cmd += ' --verbose=true --baseUrl="https://18birdies.com" ';
+    } else if (drafts === true) {
+        cmd += ' --buildDrafts=true --verbose=true --baseUrl="http://localhost:3000/" ';
     }
 
     var result = exec(cmd, {encoding: 'utf-8'});
@@ -49,5 +49,5 @@ gulp.task('hugo:delete', ['revision'], function() {
 });
 
 gulp.task('hugo:live', ['hugo:delete'], function() {
-    hugo('live');
+    hugo(false);
 });
