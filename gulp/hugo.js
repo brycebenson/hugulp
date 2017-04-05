@@ -23,9 +23,7 @@ function hugo(drafts) {
 	// console.log('conf %s', conf)
 
     var cmd = 'hugo --config=' + conf + ' -s ' + src + ' -d ' + dst;
-    if (drafts === false) {
-        cmd += ' --verbose=true --baseUrl="https://18birdies.com" ';
-    } else if (drafts === true) {
+    if (drafts) {
         cmd += ' --buildDrafts=true --verbose=true --baseUrl="http://localhost:3000/" ';
     }
 
